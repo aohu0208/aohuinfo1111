@@ -1,10 +1,11 @@
-// src/app/page.tsx
 'use client';
 
 import Image from 'next/image';
 import './globals.css';
 
 export default function HomePage() {
+  const manager = process.env.NEXT_PUBLIC_MANAGER_NAME || 'Unknown';
+
   return (
     <>
       <header>
@@ -26,18 +27,10 @@ export default function HomePage() {
           <h2>About</h2>
           <p>This site helps manage strata properties with ease. Use the menu to navigate.</p >
           <Image src="/B1.png" alt="logo" width={600} height={300} className="logo" />
+          <h2>Managed by: {manager}</h2>
         </section>
       </main>
 
-
-      const manager = process.env.NEXT_PUBLIC_MANAGER_NAME;
-
-      return (
-        <div>
-          <h2>Managed by: {manager}</h2>
-        </div>
-      );
-      
       <footer>
         <p>&copy; 2025 Strata Manager</p >
       </footer>
